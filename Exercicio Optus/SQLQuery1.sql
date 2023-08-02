@@ -1,0 +1,45 @@
+--DDL
+
+CREATE DATABASE Exercicio_1_4
+
+USE Exercicio_1_4
+
+CREATE TABLE Artistas
+(
+	IdArtista INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(50)
+)
+
+CREATE TABLE Usuarios
+(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(50),
+	Email VARCHAR(50),
+	Senha VARCHAR(50),
+	Permissao VARCHAR(50)
+)
+
+CREATE TABLE Estilos
+(
+	IdEstilo INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(50)
+)
+
+CREATE TABLE Albuns
+(
+	IdAlbum INT PRIMARY KEY IDENTITY,
+	IdArtista INT FOREIGN KEY REFERENCES Artistas(IdArtista),
+	Titulo VARCHAR(50),
+	DataLancamento VARCHAR(50),
+	Localizacao VARCHAR(50),
+	QtdMinutos VARCHAR(50),
+	Ativo VARCHAR(50)
+)
+
+CREATE TABLE AlbunsEstilos
+(
+	IdAlbum INT FOREIGN KEY REFERENCES Albuns(IdAlbum),
+	IdEstilo INT FOREIGN KEY REFERENCES Estilos(IdEstilo)
+)
+
+
