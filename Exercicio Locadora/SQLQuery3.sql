@@ -14,11 +14,11 @@ VALUES('Ford K')
 INSERT INTO Marca(Nome)
 VALUES('BMW')
 
-INSERT INTO Veiculo(Placa)
-VALUES('2KDO29')
+INSERT INTO Veiculo(IdEmpresa,IdModelo,IdMarca,Placa)
+VALUES(1,1,1,'2KDO29')
 
-INSERT INTO Aluguel(Protocolo)
-VALUES('2ed23k')
+INSERT INTO Aluguel(IdVeiculo,IdCliente,Protocolo)
+VALUES(1,1,'2ed23k')
 
 
 
