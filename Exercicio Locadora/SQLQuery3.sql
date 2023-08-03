@@ -6,10 +6,10 @@ INSERT INTO Cliente(Nome,CPF)
 VALUES ('Eduardo','1234567089')
 
 INSERT INTO Empresa(Nome)
-VALUES('FORD')
+VALUES('TOYOTA')
 
 INSERT INTO Modelo(Nome)
-VALUES('Ford K')
+VALUES('Ford G')
 
 INSERT INTO Marca(Nome)
 VALUES('BMW')
@@ -17,8 +17,8 @@ VALUES('BMW')
 INSERT INTO Veiculo(IdEmpresa,IdModelo,IdMarca,Placa)
 VALUES(1,1,1,'2KDO29')
 
-INSERT INTO Aluguel(IdVeiculo,IdCliente,Protocolo)
-VALUES(1,1,'2ed23k')
+INSERT INTO Aluguel(IdVeiculo,IdCliente,Protocolo,IdInicio,IdFim)
+VALUES(1,1,'2ed23k','20/06/2020','30/02/2023')
 
 
 
@@ -28,3 +28,14 @@ SELECT * FROM Modelo
 SELECT * FROM Marca
 SELECT * FROM Veiculo
 SELECT * FROM Aluguel
+
+--DQL
+
+SELECT Cliente.Nome, Modelo.Nome, Aluguel.IdInicio, Aluguel.IdInicio
+FROM Cliente 
+LEFT JOIN Empresa 
+ON Cliente.CPF = Empresa.IdEmpresa
+
+
+
+
